@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "#2d629a";
+      document.getElementById("page-title").textContent = "Homem-aranha no aranhaverso";
+
+      const paragraph2 = document.getElementById("second-paragraph");
+      paragraph2.style.color = '#462a2a';
+      paragraph2.textContent = 'Lo segundito paragrafito';
+      paragraph2.style.textAlign = 'right';
+
+      const subtitle = document.getElementById("subtitle");
+      subtitle.textContent = 'Filmzão top';
+    </script>
+  </body>
+</html>
