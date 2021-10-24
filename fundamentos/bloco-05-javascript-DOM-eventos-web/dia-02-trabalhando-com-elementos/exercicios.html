@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let texth1 = document.createElement('h1');
+      texth1.innerText = "Exercício 5.2 - JavaScript DOM";
+
+      let bodyLet = document.querySelector('body');
+      bodyLet.appendChild(texth1);
+
+      let mainTag = document.createElement('main');
+      mainTag.className = "main-content";
+      bodyLet.appendChild(mainTag);
+
+      let mainCont = document.querySelector('.main-content');
+      let sectionCC = document.createElement('section');
+      sectionCC.className = "center-content";
+      mainCont.appendChild(sectionCC);
+
+      let tagP = document.createElement('p');
+      tagP.innerText = "Algum texto, teste";
+      let sectionSelect = document.querySelector('.center-content');
+      sectionSelect.appendChild(tagP);
+
+      let tagSectionLeft = document.createElement('section');
+      tagSectionLeft.className = "left-content";
+      mainCont.appendChild(tagSectionLeft);
+
+      let tagSectionRight = document.createElement('section');
+      tagSectionRight.className = "right-content";
+      mainCont.appendChild(tagSectionRight);
+
+      let imagemAdd = document.createElement('img');
+      imagemAdd.className = "small-image";
+      imagemAdd.src = "https://picsum.photos/200";
+      let sectionNum5 = document.querySelector('.left-content');
+      sectionNum5.appendChild(imagemAdd);
+
+
+      let sectionNum6 = document.querySelector('.right-content');
+      let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let listAdd = document.createElement('ul');
+      sectionNum6.appendChild(listAdd);
+      let ulList = document.querySelector('ul');
+
+
+      for(let i = 0; i < arrayNum.length; i += 1){
+        let listElement = arrayNum[i];
+        let listContent = document.createElement('li');
+        listContent.innerText = listElement;
+        ulList.appendChild(listContent);
+      }
+
+
+      for(let i = 0; i < 3; i += 1){
+        let h3Titles = document.createElement('h3');
+        h3Titles.innerText = 'Texto H3';
+        mainCont.appendChild(h3Titles);
+      }
+
+      document.getElementsByTagName('h1')[0].className = "title";
+
+      let h3Change = document.querySelectorAll('h3');
+      for(let i = 0; i < h3Change.length; i += 1){
+        h3Change[i].className = "description";
+      }
+
+      let delSection = document.querySelector('.left-content');
+      mainCont.removeChild(delSection);
+
+      sectionNum6.style.marginRight = "auto";
+
+      let changeColor = sectionSelect.parentElement;
+      changeColor.style.backgroundColor = "green";
+
+
+
+      for(let i = 0; i < arrayNum.length; i += 1){
+        let liCheck = document.querySelectorAll('li')[i];
+        if(liCheck.innerText.includes('9')){
+          ulList.removeChild(liCheck);
+        }
+      }
+      
+
+    </script>
+  </body>
+</html>
